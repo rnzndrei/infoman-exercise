@@ -27,20 +27,21 @@ $sql = "SELECT * FROM tblcourse order by fldindex";
             while($row = $result->fetch_assoc())
             {
                 
-                $vcourse_code=$row['course_code'];			
-                $vcourse_title=$row['course_title'];	
-                $vunits=$row['units'];	
+                $vcourseindex=$row['fldindex'];			
+                $vcoursecode=$row['fldcoursecode'];	
+                $vcourse=$row['fldcourse'];	
+                $vunits=$row['fldunits'];
 	                
                 ?>
                 <tr>
                 <td>
                 <?php
-                echo $vcourse_code;
+                echo $vcoursecode;
                 ?>
                 </td>
                 <td>
                 <?php
-                echo $vcourse_title;
+                echo $vcourse;
                 ?>
                 </td>
                 <td>
@@ -50,10 +51,10 @@ $sql = "SELECT * FROM tblcourse order by fldindex";
                 </td>
                     
                 <td>
-                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vcourse_code; ?>'">Update</button>
+                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vcoursecode; ?>'">Update</button>
                 </td>
                 <td>
-                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vcourse_code; ?>'">Delete</button>
+                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vcoursecode; ?>'">Delete</button>
                 </td>
 
                 </tr>

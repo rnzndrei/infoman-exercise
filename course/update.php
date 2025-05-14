@@ -1,16 +1,18 @@
 <?php
 require("../include/conn.php");
-$vcourse_code=$_REQUEST['vid'];
+$vcoursecode=$_REQUEST['vid'];
+$vcoursecodeold=$_REQUEST['vid'];
 
-$sql = "SELECT * FROM tblcourse where course_code='$vcourse_code'  order by fldindex";
+$sql = "SELECT * FROM tblcourse where fldcoursecode='$vcoursecode'  order by fldindex";
         $result = $conn->query($sql);
         if($result->num_rows > 0) 
         {
             while($row = $result->fetch_assoc())
             {
-                
-                $vcourse_title=$row['course_title'];			
-                $vunits=$row['units'];			
+            
+                $vindex=$row['fldindex'];
+                $vcourse=$row['fldcourse'];			
+                $vunits=$row['fldunits'];			
                 
             }
         }
@@ -19,6 +21,8 @@ $sql = "SELECT * FROM tblcourse where course_code='$vcourse_code'  order by fldi
 <html>
     <body>
     <form action="update-save.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
+        <input type="hidden" name="txtcoursecodeold" value="<?php echo $vcoursecodeold; ?>">
+        <input type="hidden"  name="txtindex" id="txtindex" value="<?php echo $vindex; ?>">
         <table border="1">    
             <tr>
                 <td colspan="2" align=center>
@@ -30,8 +34,7 @@ $sql = "SELECT * FROM tblcourse where course_code='$vcourse_code'  order by fldi
                 <label >Enter Course Code:</label>
                 </td>
                 <td>
-                <input type="hidden" name="txtoriginal_course_code" value="<?php echo $vcourse_code; ?>">
-                <input type="text" name="txtcourse_code" id="txtcourse_code" value="<?php echo $vcourse_code; ?>">
+                <input type="text" name="txtcoursecode" id="txtcoursecode" value="<?php echo $vcoursecode; ?>">
                 </td>
             </tr>
             
@@ -40,7 +43,7 @@ $sql = "SELECT * FROM tblcourse where course_code='$vcourse_code'  order by fldi
                 <label >Enter Course Title:</label>
                 </td>
                 <td>
-                <input type="text" name="txtcourse_title" id="txtcourse_title" value="<?php echo $vcourse_title; ?>">
+                <input type="text" name="txtcourse" id="txtcourse" value="<?php echo $vcourse; ?>">
                 </td>
             </tr>
             
@@ -51,8 +54,7 @@ $sql = "SELECT * FROM tblcourse where course_code='$vcourse_code'  order by fldi
                 <td>
                 <input type="text" name="txtunits" id="txtunits" value="<?php echo $vunits; ?>">
                 </td>
-            </tr>
-            
+            </tr>            
             <tr>
                 <td colspan="2" align=center>
                 <input type="submit" value="Update Record" />

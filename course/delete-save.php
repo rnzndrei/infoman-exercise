@@ -1,15 +1,15 @@
 <?php
 require("../include/conn.php");
 
-$vcourse_code=$_POST['txtcourse_code'];
-$vcourse_title=$_POST['txtcourse_title'];
+$vcoursecode=$_POST['txtcoursecode'];
+$vcourse=$_POST['txtcourse'];
 $vunits=$_POST['txtunits'];
-//Old student number
-$original_course_code = $_POST['txtoriginal_course_code'];
+//Old course code
+$vcoursecodeold = $_POST['txtcoursecodeold'];
 
 $vindex=0;
 
-$sql = "DELETE FROM tblcourse WHERE course_code='$vcourse_code'";
+$sql = "DELETE FROM tblcourse WHERE fldcoursecode='$vcoursecode'";
                     if (mysqli_query($conn, $sql)) {
                       //echo "Record deleted successfully";
                     } else {

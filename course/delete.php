@@ -1,16 +1,16 @@
 <?php
 require("../include/conn.php");
-$vcourse_code=$_REQUEST['vid'];
+$vcoursecode=$_REQUEST['vid'];
 
-$sql = "SELECT * FROM tblcourse where course_code='$vcourse_code'  order by fldindex";
+$sql = "SELECT * FROM tblcourse where fldcoursecode='$vcoursecode'  order by fldindex";
         $result = $conn->query($sql);
         if($result->num_rows > 0) 
         {
             while($row = $result->fetch_assoc())
             {
                 
-                $vcourse_title=$row['course_title'];			
-                $vunits=$row['units'];			
+                $vcourse=$row['fldcourse'];			
+                $vunits=$row['fldunits'];			
                 
             }
         }
@@ -30,8 +30,8 @@ $sql = "SELECT * FROM tblcourse where course_code='$vcourse_code'  order by fldi
                 <label >Course Code:</label>
                 </td>
                 <td>
-                <input type="hidden" name="txtoriginal_course_code" value="<?php echo $vcourse_code; ?>">
-                <input readonly type="text" name="txtcourse_code" id="txtcourse_code" value="<?php echo $vcourse_code; ?>">
+                <input type="hidden" name="txtcoursecodeold" value="<?php echo $vcoursecodeold; ?>">
+                <input readonly type="text" name="txtcoursecode" id="txtcoursecode" value="<?php echo $vcoursecode; ?>">
                 </td>
             </tr>
             
@@ -40,7 +40,7 @@ $sql = "SELECT * FROM tblcourse where course_code='$vcourse_code'  order by fldi
                 <label >Course Title:</label>
                 </td>
                 <td>
-                <input readonly type="text" name="txtcourse_title" id="txtcourse_title" value="<?php echo $vcourse_title; ?>">
+                <input readonly type="text" name="txtcourse" id="txtcourse" value="<?php echo $vcourse; ?>">
                 </td>
             </tr>
             

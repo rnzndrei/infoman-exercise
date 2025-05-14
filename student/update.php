@@ -1,7 +1,7 @@
 <?php
 require("../include/conn.php");
 $vstudentnumber=$_REQUEST['vid'];
-$originalstudentnumber = $_REQUEST['vid'];
+$vstudentnumberold=$_REQUEST['vid'];
 
 $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order by fldindex";
         $result = $conn->query($sql);
@@ -9,12 +9,11 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order
         {
             while($row = $result->fetch_assoc())
             {
-                
+                $vindex=$row['fldindex'];			
                 $vlastname=$row['fldlastname'];			
                 $vfirstname=$row['fldfirstname'];			
                 $vmiddlename=$row['fldmiddlename'];			
                 $vprogramofstudy=$row['fldprogramofstudy'];
-                
             }
         }
 
@@ -22,7 +21,8 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order
 <html>
     <body>
     <form action="update-save.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
-        
+        <input type="hidden"  name="txtstudentnumberold" id="txtstudentnumberold" value="<?php echo $vstudentnumberold; ?>">
+        <input type="hidden"  name="txtindex" id="txtindex" value="<?php echo $vindex; ?>">
         <table border="1">    
             <tr>
                 <td colspan="2" align=center>
@@ -34,7 +34,6 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order
                 <label >Enter Student Number:</label>
                 </td>
                 <td>
-                <input type="hidden" name="txtoriginal_studentnumber" value="<?php echo $vstudentnumber; ?>">
                 <input type="text" name="txtstudentnumber" id="txtstudentnumber" value="<?php echo $vstudentnumber; ?>">
                 </td>
             </tr>
@@ -65,7 +64,7 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order
                 <input type="text" name="txtmiddlename" id="txtmiddlename" value="<?php echo $vmiddlename; ?>">
                 </td>
             </tr>
-            
+
             <tr>
                 <td>
                 <label >Enter Program of Study:</label>
@@ -74,7 +73,7 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order
                 <input type="text" name="txtprogramofstudy" id="txtprogramofstudy" value="<?php echo $vprogramofstudy; ?>">
                 </td>
             </tr>
-
+            
             <tr>
                 <td colspan="2" align=center>
                 <input type="submit" value="Update Record" />

@@ -21,27 +21,27 @@ $vsearch=$_POST['txtsearch'];
 </form>
 
 <?php
-$sql = "SELECT * FROM tblcourse where course_code='$vsearch' || course_title='$vsearch' || units='$vsearch' order by fldindex";
+$sql = "SELECT * FROM tblcourse where fldcoursecode='$vsearch' || fldcourse='$vsearch' || fldunits='$vsearch' order by fldindex";
         $result = $conn->query($sql);
         if($result->num_rows > 0) 
         {
             while($row = $result->fetch_assoc())
             {
                 
-                $vcourse_code=$row['course_code'];			
-                $vcourse_title=$row['course_title'];	
-                $vunits=$row['units'];	
+                $vcoursecode=$row['fldcoursecode'];			
+                $vcourse=$row['fldcourse'];	
+                $vunits=$row['fldunits'];	
 	                
                 ?>
                 <tr>
                 <td>
                 <?php
-                echo $vcourse_code;
+                echo $vcoursecode;
                 ?>
                 </td>
                 <td>
                 <?php
-                echo $vcourse_title;
+                echo $vcourse;
                 ?>
                 </td>
                 <td>
@@ -51,10 +51,10 @@ $sql = "SELECT * FROM tblcourse where course_code='$vsearch' || course_title='$v
                 </td>
                     
                 <td>
-                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vcourse_code; ?>'">Update</button>
+                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vcoursecode; ?>'">Update</button>
                 </td>
                 <td>
-                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vcourse_code; ?>'">Delete</button>
+                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vcoursecode; ?>'">Delete</button>
                 </td>
 
                 </tr>

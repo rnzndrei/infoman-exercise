@@ -1,8 +1,8 @@
 <?php
 require("../include/conn.php");
 
-$vcourse_code="";
-$vcourse_title="";
+$vcoursecode="";
+$vcourse="";
 $vunits="";
 
 ?>
@@ -20,7 +20,7 @@ $vunits="";
                 <label >Enter Course Code:</label>
                 </td>
                 <td>
-                <input type="text" name="txtcourse_code" id="txtcourse_code" value="<?php echo $vcourse_code; ?>">
+                <input type="text" name="txtcoursecode" id="txtcoursecode" value="<?php echo $vcoursecode; ?>">
                 </td>
             </tr>
             
@@ -29,7 +29,7 @@ $vunits="";
                 <label >Enter Course Title:</label>
                 </td>
                 <td>
-                <input type="text" name="txtcourse_title" id="txtcourse_title" value="<?php echo $vcourse_title; ?>">
+                <input type="text" name="txtcourse" id="txtcourse" value="<?php echo $vcourse; ?>">
                 </td>
             </tr>
             
