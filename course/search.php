@@ -5,7 +5,7 @@ $vsearch=$_POST['txtsearch'];
 <table border="1" style="width: 80%; height: auto;" align=center>
 <tr>
 <td colspan="6" align=center>
-    <b>Student Records</b>    
+    <b>Student Course</b>    
 </td>
 </tr>
 
@@ -21,52 +21,40 @@ $vsearch=$_POST['txtsearch'];
 </form>
 
 <?php
-$sql = "SELECT * FROM tblstudent where fldstudentnumber='$vsearch' || fldlastname='$vsearch' || fldfirstname='$vsearch' || fldmiddlename='$vsearch'|| fldprogramofstudy='$vsearch' order by fldindex";
+$sql = "SELECT * FROM tblcourse where course_code='$vsearch' || course_title='$vsearch' || units='$vsearch' order by fldindex";
         $result = $conn->query($sql);
         if($result->num_rows > 0) 
         {
             while($row = $result->fetch_assoc())
             {
                 
-                $vstudentnumber=$row['fldstudentnumber'];			
-                $vlastname=$row['fldlastname'];	
-                $vfirstname=$row['fldfirstname'];	
-                $vmiddlename=$row['fldmiddlename'];	
-                $vprogramofstudy=$row['fldprogramofstudy'];	
-                
+                $vcourse_code=$row['course_code'];			
+                $vcourse_title=$row['course_title'];	
+                $vunits=$row['units'];	
+	                
                 ?>
                 <tr>
                 <td>
                 <?php
-                echo $vstudentnumber;
+                echo $vcourse_code;
                 ?>
                 </td>
                 <td>
                 <?php
-                echo $row['fldlastname'];	
+                echo $vcourse_title;
                 ?>
                 </td>
                 <td>
                 <?php
-                echo $vfirstname;
-                ?>
-                </td>
-                <td>
-                <?php
-                echo $vmiddlename;
-                ?>
-                </td>
-                <td>
-                <?php
-                echo $vprogramofstudy;
+                echo $vunits;
                 ?>
                 </td>
                     
                 <td>
-                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vstudentnumber; ?>'">Update</button>
+                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vcourse_code; ?>'">Update</button>
                 </td>
                 <td>
-                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vstudentnumber; ?>'">Delete</button>
+                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vcourse_code; ?>'">Delete</button>
                 </td>
 
                 </tr>
@@ -79,7 +67,7 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vsearch' || fldlastnam
 ?>
 <tr>
 <td colspan="5" align=center>
-    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='student.php'">Display All</button>
+    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Display All</button>
     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='insert.php'">Insert</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='tcpdf6/examples/aaarepstudent.php'">Print</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>

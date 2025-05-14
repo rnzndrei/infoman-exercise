@@ -11,7 +11,7 @@ $vprogramofstudy="";
 <html>
     <body>
     <form action="insert-save.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
-        <table border="1">    
+        <table border="1" style="width: 80%; height: auto;" align=center>    
             <tr>
                 <td colspan="2" align=center>
                     <b>Insert Student</b>

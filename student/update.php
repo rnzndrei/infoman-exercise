@@ -1,6 +1,7 @@
 <?php
 require("../include/conn.php");
 $vstudentnumber=$_REQUEST['vid'];
+$originalstudentnumber = $_REQUEST['vid'];
 
 $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order by fldindex";
         $result = $conn->query($sql);
@@ -21,6 +22,7 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order
 <html>
     <body>
     <form action="update-save.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
+        
         <table border="1">    
             <tr>
                 <td colspan="2" align=center>

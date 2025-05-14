@@ -1,12 +1,24 @@
 <?php
 require("../include/conn.php");
 ?>
-<table border="1">
+<table border="1" style="width: 80%; height: auto;" align=center>
 <tr>
 <td colspan="6" align=center>
     <b>Student Course</b>    
 </td>
 </tr>
+
+<form action="search.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
+    <tr>
+        <td colspan="5" align=center>
+            <input type="text" name="txtsearch" id="txtsearch">
+        </td>
+        <td colspan="2" align=center>
+            <input type="submit" value="Search Record" />
+        </td>
+    </tr>
+</form>
+
 <?php
 $sql = "SELECT * FROM tblcourse order by fldindex";
         $result = $conn->query($sql);
@@ -51,6 +63,7 @@ $sql = "SELECT * FROM tblcourse order by fldindex";
 ?>
 <tr>
 <td colspan="5" align=center>
+    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Display All</button>
     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='insert.php'">Insert</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='tcpdf6/examples/aaarepstudent.php'">Print</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>

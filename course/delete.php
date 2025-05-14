@@ -19,7 +19,7 @@ $sql = "SELECT * FROM tblcourse where course_code='$vcourse_code'  order by fldi
 <html>
     <body>
     <form action="delete-save.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
-        <table border="1">    
+        <table border="1" style="width: 80%; height: auto;" align=center>    
             <tr>
                 <td colspan="2" align=center>
                     <b>Delete Course</b>

@@ -1,7 +1,7 @@
 <?php
 require("../include/conn.php");
 ?>
-<table border="1">
+<table border="1" style="width: 80%; height: auto;" align=center>
 <tr>
 <td colspan="6" align=center>
     <b>Student Records</b>    
