@@ -5,7 +5,7 @@ $vsearch=$_POST['txtsearch'];
 <table border="1" style="width: 80%; height: auto;" align=center>
 <tr>
 <td colspan="6" align=center>
-    <b>Student Records</b>    
+    <b>Enroll Students</b>    
 </td>
 </tr>
 
