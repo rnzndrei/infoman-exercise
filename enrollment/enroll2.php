@@ -36,7 +36,7 @@ $sql = "SELECT * FROM tbllist  WHERE fldcourseindex='$vcourseindex' order by fld
             }
         }
 
-//if($vdupcourse ==  0){
+if($vdupcourse ==  0){
     $sql="INSERT INTO tbllist (fldindex, fldstudentindex, fldcourseindex) VALUES ('$vindex', '$vstudentindex', '$vcourseindex')";
     if ($conn->query($sql) === TRUE) 
     {
@@ -51,14 +51,14 @@ $sql = "SELECT * FROM tbllist  WHERE fldcourseindex='$vcourseindex' order by fld
     </script>
     <meta  http-equiv="refresh" content="0.00001;url=enroll1.php?vid=<?php echo $vstudentnumber; ?>" />
     <?php
-/*}else{
+}else{
     ?>
     <script>
     alert("You already enrolled in this course.");								
     </script>
     <meta  http-equiv="refresh" content="0.00001;url=enroll1.php?vid=<?php echo $vstudentnumber; ?>" />
     <?php
-}*/
+}
 ?>
 
 
