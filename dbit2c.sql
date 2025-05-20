@@ -3,7 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+
 -- Generation Time: May 20, 2025 at 06:25 PM
+
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -111,6 +113,7 @@ INSERT INTO `tbllist` (`fldindex`, `fldstudentindex`, `fldcourseindex`) VALUES
 (43, 5, 3),
 (44, 5, 2),
 (45, 5, 1);
+
 
 -- --------------------------------------------------------
 

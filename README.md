@@ -5,3 +5,4 @@ How to use:
 4. Replace the tcpdf6 in the file from github and replace it with the downloaded tcpdf from the drive in /xampp/htdocs/infoman-exercise
 5. Go to url: localhost/infoman-exercise
 6. If the image in the pdf diasappears, download the logo1.jpg in the folder and import it in images
+
