@@ -2,7 +2,7 @@
 require("../include/conn.php");
 $vsearch=$_POST['txtsearch'];
 ?>
-<table border="1" style="width: 80%; height: auto;" align=center>
+<table border="1" style="width: auto; height: auto;" align=center>
 <tr>
 <td colspan="6" align=center>
     <b>Student Course</b>    
@@ -11,10 +11,8 @@ $vsearch=$_POST['txtsearch'];
 
 <form action="search.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
     <tr>
-        <td colspan="5" align=center>
+        <td colspan="4" align=center>
             <input type="text" name="txtsearch" id="txtsearch">
-        </td>
-        <td colspan="2" align=center>
             <input type="submit" value="Search Record" />
         </td>
     </tr>
@@ -50,10 +48,8 @@ $sql = "SELECT * FROM tblcourse where fldcoursecode='$vsearch' || fldcourse='$vs
                 ?>
                 </td>
                     
-                <td>
+                <td align=center>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vcoursecode; ?>'">Update</button>
-                </td>
-                <td>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vcoursecode; ?>'">Delete</button>
                 </td>
 

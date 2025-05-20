@@ -60,11 +60,8 @@
                     ?>
                     </td>
                         
-                    <td>
+                    <td align = center>
                     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='enroll1.php?vid=<?php echo $vstudentnumber; ?>'">Enlist</button>
-                    </td>
-
-                    <td>
                     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='enrollview.php?vid=<?php echo $vstudentnumber; ?>'">View</button>
                     </td>
 
