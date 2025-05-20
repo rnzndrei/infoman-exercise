@@ -2,7 +2,7 @@
 require("../include/conn.php");
 $vsearch=$_POST['txtsearch'];
 ?>
-<table border="1" style="width: auto; height: auto;" align=center>
+<table border="1" style="width: 80%; height: auto;" align=center>
 <tr>
 <td colspan="6" align=center>
     <b>Student Course</b>    
@@ -64,10 +64,8 @@ $sql = "SELECT * FROM tblcourse where fldcoursecode='$vsearch' || fldcourse='$vs
 <tr>
 <td colspan="5" align=center>
     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Display All</button>
-    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='insert.php'">Insert</button>
-    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='tcpdf6/examples/aaarepstudent.php'">Print</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>
-    <a href="tcpdf6/examples/aaarepstudent.php" target="_blank"> Print</a>
+
 </td>
 </tr>
 

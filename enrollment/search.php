@@ -75,7 +75,7 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vsearch' || fldlastnam
 ?>
 <tr>
 <td colspan="6" align=center>
-    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='student.php'">Display All</button>
+    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='enroll.php'">Display All</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>
 </td>
 </tr>
