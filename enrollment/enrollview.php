@@ -30,7 +30,7 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order
         Middle Name: <?php echo $vmiddlename; ?><br>
         Program: <?php echo $vprogramofstudy; ?><br>
         <hr>
-     <table border="1" style="width: 80%; height: auto;" align=center>
+     <table border="1" style="width: auto; height: auto;" align=center>
 <tr>
 <td colspan="5" align=center>
     <b>Courses Enrolled To</b>    

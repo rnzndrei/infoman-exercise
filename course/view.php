@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
         Units: <?php echo $vunits; ?><br>
         <hr>
 
-        <table border="1" style="width: 80%; height: auto;" align="center">
+        <table border="1" style="width: auto; height: auto;" align="center">
             <tr>
                 <td colspan="2" align="center">
                     <b>Students Enrolled</b>
