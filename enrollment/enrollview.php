@@ -33,7 +33,7 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order
      <table border="1" style="width: 80%; height: auto;" align=center>
 <tr>
 <td colspan="5" align=center>
-    <b>Courses Offered</b>    
+    <b>Courses Enrolled To</b>    
 </td>
 </tr>
 
@@ -90,7 +90,9 @@ $sql = "SELECT * FROM tbllist where fldstudentindex='$vstudentindex' order by fl
                     <form action="enrolldrop.php" method="post">
                     <input type="hidden" name="txtstudentnumber" value="<?php echo $vstudentnumber; ?>">
                     <input type="hidden" name="txtcoursecode" value="<?php echo $vcoursecode; ?>">
+                    <center>
                     <button type="submit">Drop</button>
+                    </center>
                     </form>
                 </td>
                 

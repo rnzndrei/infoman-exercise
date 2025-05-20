@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
 
         <table border="1" style="width: 80%; height: auto;" align="center">
             <tr>
-                <td colspan="3" align="center">
+                <td colspan="2" align="center">
                     <b>Students Enrolled</b>
                 </td>
             </tr>
@@ -57,7 +57,6 @@ if ($result->num_rows > 0) {
                             <tr>
                                 <td><?php echo $student_number; ?></td>
                                 <td><?php echo $lastname . ', ' . $firstname . ' ' . $middlename; ?></td>
-                                <td align="center">—</td>
                             </tr>
                             <?php
                         }
@@ -66,16 +65,16 @@ if ($result->num_rows > 0) {
             } else {
                 ?>
                 <tr>
-                    <td colspan="3" align="center">No students enrolled yet.</td>
+                    <td colspan="2" align="center">No students enrolled yet.</td>
                 </tr>
                 <?php
             }
             ?>
 
             <tr>
-                <td colspan="3" align="center">
+                <td colspan="2" align="center">
                     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Display All</button>
-                    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../tcpdf6/examples/aaarepcoursestudents.php?vid=<?php echo $vcoursecode; ?>'">Print</button>
+                    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../tcpdf6/examples/aaarepclasslist.php?vid=<?php echo $vcoursecode; ?>'">Print</button>
                     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Back</button>
                 </td>
             </tr>
