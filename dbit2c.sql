@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2025 at 02:33 PM
+-- Generation Time: May 20, 2025 at 06:25 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,11 @@ INSERT INTO `tblcourse` (`fldindex`, `fldcoursecode`, `fldcourse`, `fldunits`) V
 (2, 'INFOMAN', 'Information Management', 3),
 (3, 'INFASEC', 'Information Security', 3),
 (4, 'INTEPROG', 'Integrative Programming and Technologies', 3),
-(5, 'ITELECT', 'IT Elective 1', 3);
+(5, 'ITELECT', 'IT Elective 1', 3),
+(6, 'LINUSYST', 'Linux System and Network Administration', 3),
+(7, 'PROMA', 'Project Management', 3),
+(8, 'JUSTCRE', 'Justice, Peace and Integrity of Creation', 3),
+(9, 'PATHFI', 'Physical Activity Towards Health and Fitness 4', 2);
 
 -- --------------------------------------------------------
 
@@ -62,9 +66,51 @@ CREATE TABLE `tbllist` (
 --
 
 INSERT INTO `tbllist` (`fldindex`, `fldstudentindex`, `fldcourseindex`) VALUES
-(3, 1, 3),
-(4, 1, 2),
-(5, 1, 1);
+(1, 1, 9),
+(2, 1, 8),
+(3, 1, 7),
+(4, 1, 6),
+(5, 1, 5),
+(6, 1, 4),
+(7, 1, 3),
+(8, 1, 2),
+(9, 1, 1),
+(10, 2, 9),
+(11, 2, 8),
+(12, 2, 7),
+(13, 2, 6),
+(14, 2, 5),
+(15, 2, 4),
+(16, 2, 3),
+(17, 2, 2),
+(18, 2, 1),
+(19, 3, 9),
+(20, 3, 8),
+(21, 3, 7),
+(22, 3, 6),
+(23, 3, 5),
+(24, 3, 4),
+(25, 3, 3),
+(26, 3, 2),
+(27, 3, 1),
+(28, 4, 9),
+(29, 4, 8),
+(30, 4, 7),
+(31, 4, 6),
+(32, 4, 5),
+(33, 4, 4),
+(34, 4, 3),
+(35, 4, 2),
+(36, 4, 1),
+(37, 5, 9),
+(38, 5, 8),
+(39, 5, 7),
+(40, 5, 6),
+(41, 5, 5),
+(42, 5, 4),
+(43, 5, 3),
+(44, 5, 2),
+(45, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -88,7 +134,17 @@ CREATE TABLE `tblstudent` (
 INSERT INTO `tblstudent` (`fldindex`, `fldstudentnumber`, `fldlastname`, `fldfirstname`, `fldmiddlename`, `fldprogramofstudy`) VALUES
 (1, '2023350761', 'Del Rosario', 'Renz Andrei', 'Tolentino', 'BSIT'),
 (2, '4211', 'Liwanag', 'Katherine Anne', 'Alonzo', 'BSIT'),
-(3, '123', 'Estrella', 'Juan Benjo', 'Garcia', 'BSIT');
+(3, '123', 'Estrella', 'Juan Benjo', 'Garcia', 'BSIT'),
+(4, '1521', 'Talens', 'Xyrelle', 'Dominique', 'BSIT'),
+(5, '512351', 'Balion', 'Angel Amaya', 'Bendicion', 'BSIT'),
+(6, '8492183', 'Doctolero', 'Lyrus', 'Lei', 'BSIT'),
+(7, '205314', 'Sahagun', 'Daniel', 'Luis', 'BSIT'),
+(8, '2641134', 'Alonzo', 'Enjey', 'Kashlee', 'BSIT'),
+(9, '64512412', 'Allyson', 'Jane', 'Paray', 'BSIT'),
+(10, '253221', 'Alonzo', 'Jhenelle', 'Yez', 'BSIT'),
+(11, '4213412', 'Tenorio', 'Paulo', 'Vela', 'BSIT'),
+(12, '124312', 'Vega', 'Princess', 'Dela', 'BSIT'),
+(13, '542525234', 'Belo', 'Zurini', 'Maulan', 'BSIT');
 
 --
 -- Indexes for dumped tables
@@ -105,6 +161,22 @@ ALTER TABLE `tblcourse`
 --
 ALTER TABLE `tbllist`
   ADD PRIMARY KEY (`fldindex`);
+
+--
+-- Indexes for table `tblstudent`
+--
+ALTER TABLE `tblstudent`
+  ADD PRIMARY KEY (`fldindex`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tblstudent`
+--
+ALTER TABLE `tblstudent`
+  MODIFY `fldindex` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
