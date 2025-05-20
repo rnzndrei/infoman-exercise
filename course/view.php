@@ -1,0 +1,84 @@
+<?php
+require("../include/conn.php");
+
+$vcoursecode = $_REQUEST['vid'];
+$originalcoursecode = $_REQUEST['vid'];
+
+// Fetch course details
+$sql = "SELECT * FROM tblcourse WHERE fldcoursecode='$vcoursecode' ORDER BY fldindex";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $vcourseindex = $row['fldindex'];
+        $vcoursecode = $row['fldcoursecode'];
+        $vcourse = $row['fldcourse'];
+        $vunits = $row['fldunits'];
+    }
+}
+?>
+
+<html>
+    <body>
+        <h4>Course Details</h4>
+        <hr>
+        Course Code: <?php echo $vcoursecode; ?><br>
+        Course Name: <?php echo $vcourse; ?><br>
+        Units: <?php echo $vunits; ?><br>
+        <hr>
+
+        <table border="1" style="width: 80%; height: auto;" align="center">
+            <tr>
+                <td colspan="3" align="center">
+                    <b>Students Enrolled</b>
+                </td>
+            </tr>
+
+            <?php
+            // Get all students enrolled in this course
+            $sql_enroll = "SELECT * FROM tbllist WHERE fldcourseindex='$vcourseindex'";
+            $result_enroll = $conn->query($sql_enroll);
+
+            if ($result_enroll->num_rows > 0) {
+                while ($enroll_row = $result_enroll->fetch_assoc()) {
+                    $student_index = $enroll_row['fldstudentindex'];
+
+                    // Get student info
+                    $sql_student = "SELECT * FROM tblstudent WHERE fldindex='$student_index'";
+                    $result_student = $conn->query($sql_student);
+
+                    if ($result_student->num_rows > 0) {
+                        while ($student_row = $result_student->fetch_assoc()) {
+                            $student_number = $student_row['fldstudentnumber'];
+                            $lastname = $student_row['fldlastname'];
+                            $firstname = $student_row['fldfirstname'];
+                            $middlename = $student_row['fldmiddlename'];
+                            ?>
+                            <tr>
+                                <td><?php echo $student_number; ?></td>
+                                <td><?php echo $lastname . ', ' . $firstname . ' ' . $middlename; ?></td>
+                                <td align="center">—</td>
+                            </tr>
+                            <?php
+                        }
+                    }
+                }
+            } else {
+                ?>
+                <tr>
+                    <td colspan="3" align="center">No students enrolled yet.</td>
+                </tr>
+                <?php
+            }
+            ?>
+
+            <tr>
+                <td colspan="3" align="center">
+                    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Display All</button>
+                    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../tcpdf6/examples/aaarepcoursestudents.php?vid=<?php echo $vcoursecode; ?>'">Print</button>
+                    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Back</button>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
