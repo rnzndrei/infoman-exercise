@@ -80,7 +80,7 @@ $sql = "SELECT * FROM tblcourse order by fldindex desc";
                 ?>
                 </td>
                     
-                <td>
+                <td align = center>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='enroll2.php?vid=<?php echo $vstudentindex; ?>&vid1=<?php echo $vcourseindex; ?>&vid2=<?php echo $vstudentnumber; ?>'">Enroll</button>
                 </td>
                 
@@ -92,9 +92,8 @@ $sql = "SELECT * FROM tblcourse order by fldindex desc";
 <tr>
 <td colspan="5" align=center>
     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='student.php'">Display All</button>
-    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='tcpdf6/examples/aaarepstudent.php'">Print</button>
+    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../tcpdf6/examples/aaarepcourse.php'">Print</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='enroll.php'">Back</button>
-    <a href="tcpdf6/examples/aaarepstudent.php" target="_blank"> Print</a>
 </td>
 </tr>
 

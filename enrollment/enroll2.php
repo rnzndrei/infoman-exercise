@@ -24,7 +24,7 @@ $sql = "SELECT * FROM tbllist order by fldindex";
         }
         $vindex=$vindex+1;
 
-$sql = "SELECT * FROM tbllist  WHERE fldcourseindex='$vcourseindex' order by fldindex";
+$sql = "SELECT * FROM tbllist WHERE fldstudentindex='$vstudentindex' AND fldcourseindex='$vcourseindex'";
         $result = $conn->query($sql);
         if($result->num_rows > 0) 
         {

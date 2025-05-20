@@ -1,10 +1,11 @@
 <?php
 require("../include/conn.php");
+$vsearch=$_POST['txtsearch'];
 ?>
-<table border="1" style="width: auto; height: auto;" align=center>
+<table border="1" style="width: 80%; height: auto;" align=center>
 <tr>
 <td colspan="6" align=center>
-    <b>Student Records</b>    
+    <b>Enroll Students</b>    
 </td>
 </tr>
 
@@ -18,7 +19,7 @@ require("../include/conn.php");
 </form>
 
 <?php
-$sql = "SELECT * FROM tblstudent order by fldindex";
+$sql = "SELECT * FROM tblstudent where fldstudentnumber='$vsearch' || fldlastname='$vsearch' || fldfirstname='$vsearch' || fldmiddlename='$vsearch'|| fldprogramofstudy='$vsearch' order by fldindex";
         $result = $conn->query($sql);
         if($result->num_rows > 0) 
         {
@@ -67,13 +68,14 @@ $sql = "SELECT * FROM tblstudent order by fldindex";
                 </tr>
                 <?php
             }
+        } else {
+            echo "<script>alert('No Records Found');</script>";
+            echo "<tr><td colspan = '6' align = center>No Records Found</tr></td>";
         }
 ?>
 <tr>
 <td colspan="6" align=center>
-    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='student.php'">Display All</button>
-    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='insert.php'">Insert</button>
-    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../tcpdf6/examples/aaarepstudent.php'">Print</button>
+    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='enroll.php'">Display All</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>
 </td>
 </tr>

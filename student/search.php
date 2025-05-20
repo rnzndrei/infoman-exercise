@@ -11,10 +11,8 @@ $vsearch=$_POST['txtsearch'];
 
 <form action="search.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
     <tr>
-        <td colspan="5" align=center>
+        <td colspan="6" align=center>
             <input type="text" name="txtsearch" id="txtsearch">
-        </td>
-        <td colspan="2" align=center>
             <input type="submit" value="Search Record" />
         </td>
     </tr>
@@ -62,10 +60,8 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vsearch' || fldlastnam
                 ?>
                 </td>
                     
-                <td>
+                <td align=center>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vstudentnumber; ?>'">Update</button>
-                </td>
-                <td>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vstudentnumber; ?>'">Delete</button>
                 </td>
 
@@ -78,12 +74,9 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vsearch' || fldlastnam
         }
 ?>
 <tr>
-<td colspan="5" align=center>
+<td colspan="6" align=center>
     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='student.php'">Display All</button>
-    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='insert.php'">Insert</button>
-    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='tcpdf6/examples/aaarepstudent.php'">Print</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>
-    <a href="tcpdf6/examples/aaarepstudent.php" target="_blank"> Print</a>
 </td>
 </tr>
 

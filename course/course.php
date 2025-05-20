@@ -10,10 +10,8 @@ require("../include/conn.php");
 
 <form action="search.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
     <tr>
-        <td colspan="5" align=center>
+        <td colspan="4" align=center>
             <input type="text" name="txtsearch" id="txtsearch">
-        </td>
-        <td colspan="2" align=center>
             <input type="submit" value="Search Record" />
         </td>
     </tr>
@@ -50,14 +48,9 @@ $sql = "SELECT * FROM tblcourse order by fldindex";
                 ?>
                 </td>
                     
-                <td>
+                <td align=center>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vcoursecode; ?>'">Update</button>
-                </td>
-                <td>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vcoursecode; ?>'">Delete</button>
-                </td>
-
-                <td>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='view.php?vid=<?php echo $vcoursecode; ?>'">View</button>
                 </td>
 

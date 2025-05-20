@@ -8,16 +8,14 @@
     </td>
     </tr>
 
-    <form action="search.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
-        <tr>
-            <td colspan="5" align=center>
-                <input type="text" name="txtsearch" id="txtsearch">
-            </td>
-            <td colspan="2" align=center>
-                <input type="submit" value="Search Record" />
-            </td>
-        </tr>
-    </form>
+<form action="search.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
+    <tr>
+        <td colspan="6" align=center>
+            <input type="text" name="txtsearch" id="txtsearch">
+            <input type="submit" value="Search Record" />
+        </td>
+    </tr>
+</form>
 
     <?php
     $sql = "SELECT * FROM tblstudent order by fldindex";
@@ -60,11 +58,8 @@
                     ?>
                     </td>
                         
-                    <td>
+                    <td align = center>
                     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='enroll1.php?vid=<?php echo $vstudentnumber; ?>'">Enlist</button>
-                    </td>
-
-                    <td>
                     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='enrollview.php?vid=<?php echo $vstudentnumber; ?>'">View</button>
                     </td>
 
@@ -75,7 +70,7 @@
     ?>
     <tr>
     <td colspan="5" align=center>
-        <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='student.php'">Display All</button>
+        <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='enroll.php'">Display All</button>
         <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../tcpdf6/examples/aaarepstudent.php'">Print</button>
         <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>
     </td>
